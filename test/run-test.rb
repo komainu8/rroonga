@@ -30,7 +30,14 @@ if ENV["NO_MAKE"] != "yes"
     make = "make"
   end
 end
+p "AAA"
+p make
+p "BBB"
 if make
+  p "CCC"
+  p #{base_dir.dump}
+  p #{make}
+  p "DDD"
   system("cd #{base_dir.dump} && #{make}") or exit(false)
 end
 
