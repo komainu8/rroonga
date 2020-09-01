@@ -31,7 +31,7 @@ if ENV["NO_MAKE"] != "yes"
   end
 end
 if make
-  system("cd #{base_dir.dump} && #{make} > /dev/null") or exit(false)
+  system("cd #{base_dir.dump} && #{make}") or exit(false)
 end
 
 require "test-unit"
