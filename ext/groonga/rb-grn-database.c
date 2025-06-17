@@ -543,7 +543,7 @@ rb_grn_database_defrag (int argc, VALUE *argv, VALUE self)
 {
     grn_ctx *context;
     grn_obj *database;
-    int n_segments;
+    uint64_t n_segments;
     VALUE options, rb_threshold;
     int threshold = 0;
 
@@ -560,7 +560,7 @@ rb_grn_database_defrag (int argc, VALUE *argv, VALUE self)
     n_segments = grn_obj_defrag(context, database, threshold);
     rb_grn_context_check(context, self);
 
-    return INT2NUM(n_segments);
+    return ULL2NUM(n_segments);
 }
 
 /*
